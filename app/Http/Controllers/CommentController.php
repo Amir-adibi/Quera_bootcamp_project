@@ -33,7 +33,7 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $product_id)
     {
         $request->validate([
             'body' => 'required',
@@ -41,6 +41,7 @@ class CommentController extends Controller
 
         $input = $request->all();
         $input['user_id'] = auth()->id();
+        $input['product_id'] = $product_id;
 
         Comment::create($input);
     }

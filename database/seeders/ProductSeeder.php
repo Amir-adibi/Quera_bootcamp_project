@@ -17,8 +17,20 @@ class ProductSeeder extends Seeder
     {
         Product::create([
             'name' => 'iPhone 13',
-            'price' => 899,
+            'price' => 799,
             'numbers_available' => 12
+        ]);
+
+        Product::create([
+            'name' => 'iPhone 13 Pro',
+            'price' => 899,
+            'numbers_available' => 15
+        ]);
+
+        Product::create([
+            'name' => 'iPhone 14 Pro',
+            'price' => 999,
+            'numbers_available' => 8
         ]);
     }
 }

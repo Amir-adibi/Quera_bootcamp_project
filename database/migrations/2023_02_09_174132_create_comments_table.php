@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->integer('parent_id')->unsigned()->nullable();
+//            $table->integer('parent_id')->unsigned()->nullable();
 //            $table->boolean('approved');
             $table->text('body');
             $table->timestamps();

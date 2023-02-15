@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CommentController;
+use \App\Http\Controllers\ProductController;
+use \App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,5 +21,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Products
+Route::post('products/register', [ProductController::class, 'store']);  // add new product
+Route::get('products', [ProductController::class, 'index']);  // show all products
+Route::get('products/{product_id}/', [ProductController::class, 'show']);
+
+//Users
+Route::post('/register', [UserController::class, 'register']);
+Route::post('/login', [UserController::class, 'login']);
+Route::get('users', [UserController::class, 'index']);
+Route::get('users/{user_id}', [UserController::class, 'show']);
+
 // Comments
-Route::post('comments/{product_id}/', [CommentController::class, 'store']);
+Route::post('products/{product_id}/comments', [CommentController::class, 'store']);

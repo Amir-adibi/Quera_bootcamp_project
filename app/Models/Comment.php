@@ -12,15 +12,11 @@ class Comment extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['user_id', 'post_id', 'parent_id', 'body'];
+//    protected $fillable = ['user_id', 'post_id', 'parent_id', 'body'];
+    protected $fillable = ['user_id', 'post_id', 'body'];
 
     public string $comment_text;
     public bool $approved;
-
-    public function getProductComments($product_id)
-    {
-
-    }
 
     public function user()
     {
